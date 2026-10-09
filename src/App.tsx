@@ -295,412 +295,288 @@ export default function App() {
       )}
 
       {/* ======================================================== */}
-      {/* 1. HERO SECTION WRAPPER (h-screen intacto como antes)    */}
+      {/* 1. HEADER                                                */}
       {/* ======================================================== */}
-      <div id="inicio" className="h-screen w-full flex flex-col relative overflow-hidden bg-[#EFFDF0] shrink-0">
-        {/* HEADER */}
-        <header className="shrink-0 w-full px-6 md:px-12 py-3.5 relative z-30 flex items-center justify-between animate-fade-in delay-100">
-          {/* Left: Brand Logo P3TS */}
-          <div className="flex items-center">
-            <a
-              href="#inicio"
-              className="flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-[#1a3d1a] rounded-lg transition-transform hover:scale-[1.02]"
-              title="P3TS - Página Inicial"
-            >
-              <div className="w-9 h-9 md:w-11 md:h-11 rounded-2xl bg-[#1a3d1a] flex items-center justify-center text-white shadow-xs">
-                <svg
-                  className="w-5 h-5 md:w-6 md:h-6 fill-[#EFFDF0]"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M12 10.5c-2.4 0-4.3 1.9-4.3 4.3 0 2.1 1.7 3.7 3.8 3.7 1.2 0 2.2-.5 2.9-1.3.7.8 1.7 1.3 2.9 1.3 2.1 0 3.8-1.6 3.8-3.7 0-2.4-1.9-4.3-4.3-4.3-.8 0-1.5.2-2.1.6-.6-.4-1.3-.6-2.1-.6zM7.5 9c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm9 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-6.5-2.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm4 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif-display font-normal text-2xl md:text-3xl text-[#1a3d1a] leading-none tracking-normal">
-                  P3TS<span className="text-[#E86A10]">.</span>
-                </span>
-                <span className="text-[10px] uppercase tracking-wider text-[#1a3d1a]/60 font-semibold leading-tight">
-                  Pet Store
-                </span>
-              </div>
-            </a>
-          </div>
-
-          {/* Center Nav: Hidden below md */}
-          <nav
-            className="hidden md:flex items-center gap-7 lg:gap-9 text-sm font-medium"
-            aria-label="Navegação Principal"
+      <header className="sticky top-0 z-40 w-full px-4 sm:px-6 md:px-8 lg:px-12 py-3 bg-[#EFFDF0]/95 backdrop-blur-md border-b border-[#1a3d1a]/5 flex items-center justify-between shrink-0">
+        {/* Left: Brand Logo P3TS */}
+        <div className="flex items-center">
+          <a
+            href="#inicio"
+            className="flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-[#1a3d1a] rounded-lg transition-transform hover:scale-[1.02]"
+            title="P3TS - Página Inicial"
           >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setActiveNav(link.name)}
-                className={`transition-colors whitespace-nowrap py-1 relative ${
-                  activeNav === link.name
-                    ? 'text-[#1a3d1a] font-semibold'
-                    : 'text-gray-600 hover:text-[#1a3d1a]'
-                }`}
+            <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-2xl bg-[#1a3d1a] flex items-center justify-center text-white shadow-xs">
+              <svg
+                className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 fill-[#EFFDF0]"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
               >
-                {link.name}
-                {activeNav === link.name && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#1a3d1a] rounded-full" />
-                )}
-              </a>
-            ))}
-          </nav>
+                <path d="M12 10.5c-2.4 0-4.3 1.9-4.3 4.3 0 2.1 1.7 3.7 3.8 3.7 1.2 0 2.2-.5 2.9-1.3.7.8 1.7 1.3 2.9 1.3 2.1 0 3.8-1.6 3.8-3.7 0-2.4-1.9-4.3-4.3-4.3-.8 0-1.5.2-2.1.6-.6-.4-1.3-.6-2.1-.6zM7.5 9c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm9 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-6.5-2.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm4 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+              </svg>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-serif-display font-normal text-xl sm:text-2xl md:text-3xl text-[#1a3d1a] leading-none tracking-normal">
+                P3TS<span className="text-[#E86A10]">.</span>
+              </span>
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-[#1a3d1a]/60 font-semibold leading-tight">
+                Pet Store
+              </span>
+            </div>
+          </a>
+        </div>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-2.5 sm:gap-3.5">
-            {/* Search Button */}
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="hidden sm:flex items-center justify-center w-10 h-10 rounded-full border border-[#1a3d1a]/25 bg-white/70 hover:bg-white text-[#1a3d1a] transition-all hover:scale-105 active:scale-95 shadow-xs"
-              aria-label="Buscar produtos na P3TS"
-              title="Buscar produtos"
+        {/* Center Nav: Hidden below md */}
+        <nav
+          className="hidden md:flex items-center gap-4 lg:gap-8 text-xs lg:text-sm font-medium"
+          aria-label="Navegação Principal"
+        >
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setActiveNav(link.name)}
+              className={`transition-colors whitespace-nowrap py-1 relative ${
+                activeNav === link.name
+                  ? 'text-[#1a3d1a] font-semibold'
+                  : 'text-gray-600 hover:text-[#1a3d1a]'
+              }`}
             >
-              <Search className="w-4 h-4 stroke-[2.2]" />
-            </button>
+              {link.name}
+              {activeNav === link.name && (
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#1a3d1a] rounded-full" />
+              )}
+            </a>
+          ))}
+        </nav>
 
-            {/* Favorites Button */}
-            <button
-              onClick={() => setIsFavoritesOpen(true)}
-              className="relative flex items-center justify-center w-10 h-10 rounded-full bg-[#E86A10] hover:bg-[#d45e0d] text-white transition-all hover:scale-105 active:scale-95 shadow-xs"
-              aria-label="Ver favoritos"
-              title="Favoritos"
-            >
-              <Star className="w-4 h-4 fill-white stroke-white" />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#E86A10] border-2 border-[#EFFDF0] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-                {favoritesCount}
+        {/* Right Actions */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Search Button */}
+          <button
+            onClick={() => setIsSearchOpen(true)}
+            className="hidden sm:flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full border border-[#1a3d1a]/25 bg-white/70 hover:bg-white text-[#1a3d1a] transition-all hover:scale-105 active:scale-95 shadow-xs"
+            aria-label="Buscar produtos na P3TS"
+            title="Buscar produtos"
+          >
+            <Search className="w-4 h-4 stroke-[2.2]" />
+          </button>
+
+          {/* Favorites Button */}
+          <button
+            onClick={() => setIsFavoritesOpen(true)}
+            className="relative flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#E86A10] hover:bg-[#d45e0d] text-white transition-all hover:scale-105 active:scale-95 shadow-xs"
+            aria-label="Ver favoritos"
+            title="Favoritos"
+          >
+            <Star className="w-4 h-4 fill-white stroke-white" />
+            <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#E86A10] border-2 border-[#EFFDF0] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+              {favoritesCount}
+            </span>
+          </button>
+
+          {/* Cart Button */}
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="relative flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full border border-[#1a3d1a]/25 bg-white/70 hover:bg-white text-[#1a3d1a] transition-all hover:scale-105 active:scale-95 shadow-xs"
+            aria-label="Ver carrinho de compras"
+            title="Carrinho"
+          >
+            <ShoppingCart className="w-4 h-4 stroke-[2.2]" />
+            <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#E86A10] border-2 border-[#EFFDF0] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+              {cartCount}
+            </span>
+          </button>
+
+          {/* User Avatar */}
+          <button
+            onClick={() => showToast('Perfil do Tutor conectado na P3TS')}
+            className="w-9 h-9 md:w-10 md:h-10 rounded-full overflow-hidden border-2 border-white shadow-xs focus:ring-2 focus:ring-[#1a3d1a] transition-transform hover:scale-105"
+            title="Minha Conta na P3TS"
+          >
+            <img
+              src={ASSETS.avatar}
+              alt="Foto do Tutor"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </button>
+        </div>
+      </header>
+
+      {/* ======================================================== */}
+      {/* 2. HERO SECTION (Contêiner Próprio e Proporcional)        */}
+      {/* ======================================================== */}
+      <section
+        id="inicio"
+        className="relative w-full bg-[#EFFDF0] flex flex-col justify-between shrink-0 min-h-[calc(100svh-64px)] lg:h-[calc(100vh-68px)] lg:max-h-[880px] lg:min-h-[620px]"
+      >
+        {/* ÁREA DO TÍTULO (Espaço reservado real e independente no fluxo) */}
+        <div className="w-full shrink-0 flex flex-col items-center justify-center pt-6 pb-2 sm:pt-7 sm:pb-3 lg:pt-9 lg:pb-3 px-4 sm:px-6 md:px-8 text-center z-10">
+          {/* Título Desktop e Tablet (md+) */}
+          <h1 className="hidden md:block font-serif-display font-normal text-[#1a3d1a] text-[clamp(44px,5.2vw,78px)] leading-[1.06] text-center max-w-4xl tracking-normal">
+            <span className="block mb-1 sm:mb-1.5">
+              <span className="inline-block animate-word-pop delay-200 mr-3.5">
+                Tudo
               </span>
-            </button>
-
-            {/* Cart Button */}
-            <button
-              onClick={() => setIsCartOpen(true)}
-              className="relative flex items-center justify-center w-10 h-10 rounded-full border border-[#1a3d1a]/25 bg-white/70 hover:bg-white text-[#1a3d1a] transition-all hover:scale-105 active:scale-95 shadow-xs"
-              aria-label="Ver carrinho de compras"
-              title="Carrinho"
-            >
-              <ShoppingCart className="w-4 h-4 stroke-[2.2]" />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#E86A10] border-2 border-[#EFFDF0] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-                {cartCount}
+              <span className="inline-block animate-word-pop delay-300 mr-3.5">
+                o que
               </span>
-            </button>
-
-            {/* User Avatar */}
-            <button
-              onClick={() => showToast('Perfil do Tutor conectado na P3TS')}
-              className="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-xs focus:ring-2 focus:ring-[#1a3d1a] transition-transform hover:scale-105"
-              title="Minha Conta na P3TS"
-            >
-              <img
-                src={ASSETS.avatar}
-                alt="Foto do Tutor"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </button>
-          </div>
-        </header>
-
-        {/* ======================================================== */}
-        {/* DESKTOP HERO LAYOUT (lg+) - EXACT ORIGINAL DESIGN        */}
-        {/* ======================================================== */}
-        <section className="hidden lg:flex flex-1 relative flex-col overflow-hidden">
-          {/* Centered Heading Layer (z-20) - Always ABOVE the pet images */}
-          <div className="relative z-20 w-full flex flex-col items-center justify-start pt-6 xl:pt-10 2xl:pt-12 px-8 pointer-events-none">
-            <h1 className="font-serif-display font-normal text-[#1a3d1a] text-[clamp(50px,6.2vw,90px)] leading-[1.12] text-center max-w-4xl tracking-normal">
-              <span className="block mb-1.5">
-                <span className="inline-block animate-word-pop delay-200 mr-4">
-                  Tudo
-                </span>
-                <span className="inline-block animate-word-pop delay-300 mr-4">
-                  o que
-                </span>
-                <span className="inline-block animate-word-pop delay-400">
-                  Seus
-                </span>
+              <span className="inline-block animate-word-pop delay-400">
+                Seus
               </span>
-              <span className="block">
-                <span className="inline-block animate-word-pop delay-500 mr-4 text-[#E86A10]">
-                  P3TS
-                </span>
-                <span className="inline-block animate-word-pop delay-600">
-                  Amam
-                </span>
+            </span>
+            <span className="block">
+              <span className="inline-block animate-word-pop delay-500 mr-3.5 text-[#E86A10]">
+                P3TS
               </span>
-            </h1>
-          </div>
-
-          {/* Bottom 3 Images & Overlays: Positioned at bottom (z-10, below text) */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-center pointer-events-none">
-            {/* Left Image & Overlay */}
-            <div className="flex-1 relative flex items-end justify-center max-h-[min(52vh,42vw)]">
-              <img
-                src={ASSETS.bottomLeft}
-                alt="Cãozinho feliz acolhido"
-                className="w-full h-auto block object-contain object-bottom animate-photo-reveal delay-800"
-                referrerPolicy="no-referrer"
-              />
-              {/* Left Overlay: 98K+ stat with avatar stack */}
-              <div
-                className="absolute left-6 xl:left-12 pointer-events-auto flex items-center gap-3.5 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/80 shadow-lg animate-scale-in delay-1000 transition-transform hover:scale-105 cursor-pointer z-30"
-                style={{ bottom: 'clamp(16px, 3.5vh, 40px)' }}
-                onClick={() => showToast('Mais de 98.000 tutores confiam na P3TS!')}
-              >
-                <div className="flex items-center -space-x-2">
-                  <img
-                    src={ASSETS.avatar}
-                    alt="Cliente P3TS"
-                    className="w-8 h-8 rounded-full border-2 border-white object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="w-8 h-8 rounded-full bg-[#1a3d1a] text-white border-2 border-white flex items-center justify-center">
-                    <Plus className="w-4 h-4 stroke-[3]" />
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-base xl:text-lg font-bold text-[#1a3d1a] leading-none">
-                    98K+
-                  </span>
-                  <span className="text-[11px] text-gray-600 font-medium mt-0.5">
-                    Pets Felizes
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Center Image & Overlay (Tallest) */}
-            <div className="flex-[1.265] relative flex items-end justify-center max-h-[min(64vh,52vw)]">
-              <img
-                src={ASSETS.bottomCenter}
-                alt="Gatinho fofo e acolhedor"
-                className="w-full h-auto block object-contain object-bottom animate-photo-reveal delay-600"
-                referrerPolicy="no-referrer"
-              />
-              {/* Center Overlay: Best Products + Explore Products Button */}
-              <div
-                className="absolute inset-x-0 mx-auto w-fit flex flex-col items-center pointer-events-auto text-center px-4 animate-fade-up delay-1100 z-30"
-                style={{ bottom: 'clamp(16px, 3.5vh, 40px)' }}
-              >
-                <h2 className="text-white font-serif-display font-normal text-[clamp(20px,2.2vw,32px)] leading-tight drop-shadow-md mb-3 text-shadow">
-                  Os Melhores Produtos para o Seu Pet
-                </h2>
-                <a
-                  href="#loja"
-                  className="flex items-center gap-2.5 bg-[#E86A10] hover:bg-[#d45e0d] text-white px-7 py-3 rounded-full font-semibold text-sm xl:text-base transition-all duration-300 shadow-xl hover:shadow-orange-500/30 hover:scale-105 active:scale-95 pointer-events-auto"
-                >
-                  <span>Explorar Produtos</span>
-                  <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-                </a>
-              </div>
-            </div>
-
-            {/* Right Image & Overlay */}
-            <div className="flex-1 relative flex items-end justify-center max-h-[min(52vh,42vw)]">
-              <img
-                src={ASSETS.bottomRight}
-                alt="Cachorrinho feliz e bem cuidado"
-                className="w-full h-auto block object-contain object-bottom animate-photo-reveal delay-900"
-                referrerPolicy="no-referrer"
-              />
-              {/* Right Overlay: 4.6 rating with orange filled star */}
-              <div
-                className="absolute right-6 xl:right-12 pointer-events-auto flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/80 shadow-lg animate-scale-in delay-1200 transition-transform hover:scale-105 cursor-pointer z-30"
-                style={{ bottom: 'clamp(16px, 3.5vh, 40px)' }}
-                onClick={() => showToast('Avaliação média de 4.6 estrelas pelos clientes da P3TS!')}
-              >
-                <div className="w-8 h-8 rounded-full bg-[#E86A10]/15 flex items-center justify-center">
-                  <Star className="w-5 h-5 fill-[#E86A10] text-[#E86A10]" />
-                </div>
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-1">
-                    <span className="text-base xl:text-lg font-bold text-[#1a3d1a] leading-none">
-                      4.6
-                    </span>
-                    <span className="text-xs text-[#E86A10] font-semibold">★</span>
-                  </div>
-                  <span className="text-[11px] text-gray-600 font-medium mt-0.5">
-                    Avaliação dos Tutores
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ======================================================== */}
-        {/* TABLET HERO LAYOUT (md to lg)                            */}
-        {/* ======================================================== */}
-        <section className="hidden md:flex lg:hidden flex-1 relative flex-col overflow-hidden">
-          {/* Heading (z-20) */}
-          <div className="relative z-20 w-full flex flex-col items-center justify-start pt-6 px-6 pointer-events-none">
-            <h1 className="font-serif-display font-normal text-[#1a3d1a] text-5xl md:text-6xl leading-[1.12] tracking-normal text-center">
-              <span className="block mb-1.5">
-                <span className="inline-block animate-word-pop delay-200 mr-3">Tudo</span>
-                <span className="inline-block animate-word-pop delay-300 mr-3">o que</span>
-                <span className="inline-block animate-word-pop delay-400">Seus</span>
+              <span className="inline-block animate-word-pop delay-600">
+                Amam
               </span>
-              <span className="block">
-                <span className="inline-block animate-word-pop delay-500 mr-3 text-[#E86A10]">P3TS</span>
-                <span className="inline-block animate-word-pop delay-600">Amam</span>
-              </span>
-            </h1>
-          </div>
+            </span>
+          </h1>
 
-          {/* Bottom 3 Images (maxHeight controlled) */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-center pointer-events-none">
-            <div className="flex-1 relative flex items-end justify-center max-h-[48vh]">
-              <img
-                src={ASSETS.bottomLeft}
-                alt="Pet"
-                className="w-full h-auto block object-contain object-bottom animate-photo-reveal delay-800"
-                referrerPolicy="no-referrer"
-              />
-              <div
-                className="absolute left-3 pointer-events-auto flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/80 shadow-md animate-scale-in delay-1000 z-30"
-                style={{ bottom: '20px' }}
-              >
-                <div className="flex items-center -space-x-1.5">
-                  <img
-                    src={ASSETS.avatar}
-                    alt="Cliente"
-                    className="w-6 h-6 rounded-full border border-white object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="w-6 h-6 rounded-full bg-[#1a3d1a] text-white border border-white flex items-center justify-center">
-                    <Plus className="w-3 h-3 stroke-[3]" />
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-xs font-bold text-[#1a3d1a]">98K+</span>
-                  <span className="text-[10px] text-gray-600 leading-none">Pets</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex-[1.265] relative flex items-end justify-center max-h-[58vh]">
-              <img
-                src={ASSETS.bottomCenter}
-                alt="Pet Principal"
-                className="w-full h-auto block object-contain object-bottom animate-photo-reveal delay-600"
-                referrerPolicy="no-referrer"
-              />
-              <div
-                className="absolute inset-x-0 mx-auto w-fit flex flex-col items-center pointer-events-auto text-center px-2 animate-fade-up delay-1100 z-30"
-                style={{ bottom: '20px' }}
-              >
-                <h2 className="text-white font-serif-display font-normal text-xl leading-tight drop-shadow-md mb-2">
-                  Os Melhores Produtos para o Seu Pet
-                </h2>
-                <a
-                  href="#loja"
-                  className="flex items-center gap-2 bg-[#E86A10] hover:bg-[#d45e0d] text-white px-5 py-2.5 rounded-full font-semibold text-xs shadow-lg pointer-events-auto"
-                >
-                  <span>Explorar Produtos</span>
-                  <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
-                </a>
-              </div>
-            </div>
-
-            <div className="flex-1 relative flex items-end justify-center max-h-[48vh]">
-              <img
-                src={ASSETS.bottomRight}
-                alt="Pet"
-                className="w-full h-auto block object-contain object-bottom animate-photo-reveal delay-900"
-                referrerPolicy="no-referrer"
-              />
-              <div
-                className="absolute right-3 pointer-events-auto flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/80 shadow-md animate-scale-in delay-1200 z-30"
-                style={{ bottom: '20px' }}
-              >
-                <Star className="w-4 h-4 fill-[#E86A10] text-[#E86A10]" />
-                <div className="flex flex-col">
-                  <span className="text-xs font-bold text-[#1a3d1a]">4.6 ★</span>
-                  <span className="text-[10px] text-gray-600 leading-none">Avaliações</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ======================================================== */}
-        {/* MOBILE HERO LAYOUT (below md)                            */}
-        {/* ======================================================== */}
-        <section className="flex md:hidden flex-1 flex-col justify-between overflow-hidden px-4 pt-2 pb-1 relative">
-          {/* Top Section: Title, subtitle, "Explorar Produtos" (z-20) */}
-          <div className="flex flex-col items-center text-center shrink-0 animate-fade-up delay-200 pt-1 relative z-20">
-            <h1 className="font-serif-display font-normal text-[#1a3d1a] text-[32px] sm:text-[36px] leading-[1.12] tracking-normal">
+          {/* Versão Mobile (abaixo de md) */}
+          <div className="md:hidden flex flex-col items-center text-center max-w-sm mx-auto">
+            <h1 className="font-serif-display font-normal text-[#1a3d1a] text-[34px] sm:text-[38px] leading-[1.12] tracking-normal">
               Tudo o que Seus <span className="text-[#E86A10]">P3TS</span> Amam
             </h1>
-            <p className="text-xs text-gray-600 mt-1 max-w-xs font-medium leading-snug">
+            <p className="text-xs text-gray-600 mt-1.5 max-w-xs font-medium leading-snug">
               Conforto acolhedor, brinquedos e nutrição premium pensados para cada momento.
             </p>
             <a
               href="#loja"
-              className="mt-2.5 flex items-center gap-2 bg-[#E86A10] hover:bg-[#d45e0d] text-white px-5 py-2 rounded-full font-semibold text-xs shadow-md transition-transform active:scale-95"
+              className="mt-3 flex items-center gap-2 bg-[#E86A10] hover:bg-[#d45e0d] text-white px-5 py-2 rounded-full font-semibold text-xs shadow-md transition-transform active:scale-95"
             >
               <span>Explorar Produtos</span>
               <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
             </a>
-          </div>
-
-          {/* Stats Row: 98K+ with avatars left, divider, 4.6 star right (z-20) */}
-          <div className="flex items-center justify-center gap-4 bg-white/85 backdrop-blur-xs py-1.5 px-4 rounded-xl border border-white/60 mx-auto w-full max-w-xs shadow-xs z-20 shrink-0 my-1 animate-fade-in delay-600">
-            <div className="flex items-center gap-2">
-              <div className="flex items-center -space-x-1.5">
-                <img
-                  src={ASSETS.avatar}
-                  alt="Cliente"
-                  className="w-5 h-5 rounded-full border border-white object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="w-5 h-5 rounded-full bg-[#1a3d1a] text-white border border-white flex items-center justify-center">
-                  <Plus className="w-2.5 h-2.5 stroke-[3]" />
+            <div className="flex items-center justify-center gap-4 bg-white/85 backdrop-blur-xs py-1.5 px-4 rounded-xl border border-white/60 mx-auto w-full max-w-xs shadow-xs my-2.5">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center -space-x-1.5">
+                  <img
+                    src={ASSETS.avatar}
+                    alt="Cliente"
+                    className="w-5 h-5 rounded-full border border-white object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="w-5 h-5 rounded-full bg-[#1a3d1a] text-white border border-white flex items-center justify-center">
+                    <Plus className="w-2.5 h-2.5 stroke-[3]" />
+                  </div>
                 </div>
+                <span className="text-xs font-bold text-[#1a3d1a]">98K+ Pets</span>
               </div>
-              <span className="text-xs font-bold text-[#1a3d1a]">98K+ Pets</span>
-            </div>
-
-            <div className="w-[1px] h-4 bg-gray-300" />
-
-            <div className="flex items-center gap-1.5">
-              <Star className="w-3.5 h-3.5 fill-[#E86A10] text-[#E86A10]" />
-              <span className="text-xs font-bold text-[#1a3d1a]">4.6 Estrelas</span>
+              <div className="w-[1px] h-4 bg-gray-300" />
+              <div className="flex items-center gap-1.5">
+                <Star className="w-3.5 h-3.5 fill-[#E86A10] text-[#E86A10]" />
+                <span className="text-xs font-bold text-[#1a3d1a]">4.6 Estrelas</span>
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Bottom 3 Images (z-10, controlled height) */}
-          <div className="flex items-end justify-center w-full mt-auto relative z-10 pointer-events-none max-h-[38vh]">
-            <div className="flex-1 flex items-end justify-center max-h-[34vh]">
+        {/* ÁREA DA COMPOSIÇÃO DOS PETS & OVERLAYS (Abaixo do título) */}
+        <div className="w-full flex-1 min-h-0 relative flex flex-col justify-end items-center overflow-hidden max-w-[1440px] mx-auto min-h-[260px] sm:min-h-[300px] md:min-h-[360px] lg:min-h-[420px]">
+          {/* Três painéis com proporção 1 / 1.265 / 1 alinhados pela base */}
+          <div className="w-full h-full flex items-end justify-center pointer-events-none">
+            {/* Painel Esquerdo: Cachorro pequeno (flex-1) */}
+            <div className="flex-1 h-full flex items-end justify-center overflow-hidden">
               <img
                 src={ASSETS.bottomLeft}
-                alt="Pet"
-                className="w-full h-auto block object-contain object-bottom animate-photo-reveal delay-700"
+                alt="Cãozinho pequeno à esquerda"
+                className="w-full h-auto max-h-[82%] max-w-full object-contain object-bottom block animate-photo-reveal delay-800"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="flex-[1.265] flex items-end justify-center max-h-[38vh]">
+
+            {/* Painel Central: Cachorro maior ao centro (flex-[1.265]) */}
+            <div className="flex-[1.265] h-full flex items-end justify-center overflow-hidden">
               <img
                 src={ASSETS.bottomCenter}
-                alt="Pet Principal"
-                className="w-full h-auto block object-contain object-bottom animate-photo-reveal delay-500"
+                alt="Cachorro maior ao centro"
+                className="w-full h-auto max-h-full max-w-full object-contain object-bottom block animate-photo-reveal delay-600"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="flex-1 flex items-end justify-center max-h-[34vh]">
+
+            {/* Painel Direito: Gatinho à direita (flex-1) */}
+            <div className="flex-1 h-full flex items-end justify-center overflow-hidden">
               <img
                 src={ASSETS.bottomRight}
-                alt="Pet"
-                className="w-full h-auto block object-contain object-bottom animate-photo-reveal delay-800"
+                alt="Gatinho à direita"
+                className="w-full h-auto max-h-[82%] max-w-full object-contain object-bottom block animate-photo-reveal delay-900"
                 referrerPolicy="no-referrer"
               />
             </div>
           </div>
-        </section>
-      </div>
+
+          {/* Overlays Desktop e Tablet (md+) */}
+          {/* Overlay Esquerdo: Estatística 98K+ */}
+          <div
+            className="hidden md:flex absolute left-4 lg:left-8 xl:left-12 pointer-events-auto items-center gap-2.5 lg:gap-3 bg-white/95 backdrop-blur-md px-3 py-1.5 lg:px-4 lg:py-2.5 rounded-2xl border border-white/80 shadow-lg animate-scale-in delay-1000 transition-transform hover:scale-105 cursor-pointer z-20"
+            style={{ bottom: 'clamp(14px, 2.8vh, 32px)' }}
+            onClick={() => showToast('Mais de 98.000 tutores confiam na P3TS!')}
+          >
+            <div className="flex items-center -space-x-2">
+              <img
+                src={ASSETS.avatar}
+                alt="Cliente P3TS"
+                className="w-7 h-7 lg:w-8 lg:h-8 rounded-full border-2 border-white object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-[#1a3d1a] text-white border-2 border-white flex items-center justify-center">
+                <Plus className="w-3.5 h-3.5 stroke-[3]" />
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm lg:text-base xl:text-lg font-bold text-[#1a3d1a] leading-none">
+                98K+
+              </span>
+              <span className="text-[10px] lg:text-[11px] text-gray-600 font-medium mt-0.5">
+                Pets Felizes
+              </span>
+            </div>
+          </div>
+
+          {/* Overlay Central: Chamada com Botão Explorar Produtos */}
+          <div
+            className="hidden md:flex absolute inset-x-0 mx-auto w-fit max-w-[85%] flex-col items-center pointer-events-auto text-center px-2 animate-fade-up delay-1100 z-20"
+            style={{ bottom: 'clamp(14px, 2.8vh, 32px)' }}
+          >
+            <h2 className="text-white font-serif-display font-normal text-[clamp(16px,1.8vw,26px)] leading-tight drop-shadow-md mb-2 [text-shadow:_0_2px_8px_rgba(0,0,0,0.6)]">
+              Os Melhores Produtos para o Seu Pet
+            </h2>
+            <a
+              href="#loja"
+              className="flex items-center gap-2 bg-[#E86A10] hover:bg-[#d45e0d] text-white px-5 py-2 md:px-6 md:py-2.5 lg:px-7 lg:py-3 rounded-full font-semibold text-xs md:text-sm lg:text-base transition-all duration-300 shadow-xl hover:shadow-orange-500/30 hover:scale-105 active:scale-95 pointer-events-auto"
+            >
+              <span>Explorar Produtos</span>
+              <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+            </a>
+          </div>
+
+          {/* Overlay Direito: Avaliação 4.6 estrelas */}
+          <div
+            className="hidden md:flex absolute right-4 lg:right-8 xl:right-12 pointer-events-auto items-center gap-2.5 lg:gap-3 bg-white/95 backdrop-blur-md px-3 py-1.5 lg:px-4 lg:py-2.5 rounded-2xl border border-white/80 shadow-lg animate-scale-in delay-1200 transition-transform hover:scale-105 cursor-pointer z-20"
+            style={{ bottom: 'clamp(14px, 2.8vh, 32px)' }}
+            onClick={() => showToast('Avaliação média de 4.6 estrelas pelos clientes da P3TS!')}
+          >
+            <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-[#E86A10]/15 flex items-center justify-center">
+              <Star className="w-4 h-4 lg:w-5 lg:h-5 fill-[#E86A10] text-[#E86A10]" />
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1">
+                <span className="text-sm lg:text-base xl:text-lg font-bold text-[#1a3d1a] leading-none">
+                  4.6
+                </span>
+                <span className="text-xs text-[#E86A10] font-semibold">★</span>
+              </div>
+              <span className="text-[10px] lg:text-[11px] text-gray-600 font-medium mt-0.5">
+                Avaliação dos Tutores
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ======================================================== */}
       {/* 2. SEÇÃO: QUEM SOMOS                                     */}

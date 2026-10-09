@@ -172,3 +172,21 @@
 .delay-1000 { animation-delay: 1000ms; }
 .delay-1100 { animation-delay: 1100ms; }
 .delay-1200 { animation-delay: 1200ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-word-pop,
+  .animate-photo-reveal,
+  .animate-scale-in,
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-slide-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
