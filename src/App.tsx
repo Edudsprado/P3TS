@@ -409,9 +409,9 @@ export default function App() {
         {/* DESKTOP HERO LAYOUT (lg+) - EXACT ORIGINAL DESIGN        */}
         {/* ======================================================== */}
         <section className="hidden lg:flex flex-1 relative flex-col overflow-hidden">
-          {/* Centered Heading Layer (z-5) - Spacious, Well Positioned, Crisp Typography */}
-          <div className="relative z-5 w-full flex flex-col items-center justify-start pt-8 xl:pt-12 2xl:pt-14 px-8 pointer-events-none">
-            <h1 className="font-serif-display font-normal text-[#1a3d1a] text-[clamp(52px,6.5vw,94px)] leading-[1.12] text-center max-w-4xl tracking-normal">
+          {/* Centered Heading Layer (z-20) - Always ABOVE the pet images */}
+          <div className="relative z-20 w-full flex flex-col items-center justify-start pt-6 xl:pt-10 2xl:pt-12 px-8 pointer-events-none">
+            <h1 className="font-serif-display font-normal text-[#1a3d1a] text-[clamp(50px,6.2vw,90px)] leading-[1.12] text-center max-w-4xl tracking-normal">
               <span className="block mb-1.5">
                 <span className="inline-block animate-word-pop delay-200 mr-4">
                   Tudo
@@ -434,10 +434,10 @@ export default function App() {
             </h1>
           </div>
 
-          {/* Bottom 3 Images & Overlays: Absolutely positioned bottom-0 left-0 right-0 z-10 */}
+          {/* Bottom 3 Images & Overlays: Positioned at bottom (z-10, below text) */}
           <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-center pointer-events-none">
             {/* Left Image & Overlay */}
-            <div className="flex-1 relative flex items-end justify-center max-h-[min(70vh,55vw)]">
+            <div className="flex-1 relative flex items-end justify-center max-h-[min(52vh,42vw)]">
               <img
                 src={ASSETS.bottomLeft}
                 alt="Cãozinho feliz acolhido"
@@ -446,8 +446,8 @@ export default function App() {
               />
               {/* Left Overlay: 98K+ stat with avatar stack */}
               <div
-                className="absolute left-6 xl:left-12 pointer-events-auto flex items-center gap-3.5 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/80 shadow-lg animate-scale-in delay-1000 transition-transform hover:scale-105 cursor-pointer"
-                style={{ bottom: 'clamp(20px, 4vh, 50px)' }}
+                className="absolute left-6 xl:left-12 pointer-events-auto flex items-center gap-3.5 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/80 shadow-lg animate-scale-in delay-1000 transition-transform hover:scale-105 cursor-pointer z-30"
+                style={{ bottom: 'clamp(16px, 3.5vh, 40px)' }}
                 onClick={() => showToast('Mais de 98.000 tutores confiam na P3TS!')}
               >
                 <div className="flex items-center -space-x-2">
@@ -473,7 +473,7 @@ export default function App() {
             </div>
 
             {/* Center Image & Overlay (Tallest) */}
-            <div className="flex-[1.265] relative flex items-end justify-center max-h-[min(85vh,70vw)]">
+            <div className="flex-[1.265] relative flex items-end justify-center max-h-[min(64vh,52vw)]">
               <img
                 src={ASSETS.bottomCenter}
                 alt="Gatinho fofo e acolhedor"
@@ -482,10 +482,10 @@ export default function App() {
               />
               {/* Center Overlay: Best Products + Explore Products Button */}
               <div
-                className="absolute inset-x-0 mx-auto w-fit flex flex-col items-center pointer-events-auto text-center px-4 animate-fade-up delay-1100"
-                style={{ bottom: 'clamp(20px, 4vh, 50px)' }}
+                className="absolute inset-x-0 mx-auto w-fit flex flex-col items-center pointer-events-auto text-center px-4 animate-fade-up delay-1100 z-30"
+                style={{ bottom: 'clamp(16px, 3.5vh, 40px)' }}
               >
-                <h2 className="text-white font-serif-display font-normal text-[clamp(22px,2.4vw,34px)] leading-tight drop-shadow-md mb-3 text-shadow">
+                <h2 className="text-white font-serif-display font-normal text-[clamp(20px,2.2vw,32px)] leading-tight drop-shadow-md mb-3 text-shadow">
                   Os Melhores Produtos para o Seu Pet
                 </h2>
                 <a
@@ -499,7 +499,7 @@ export default function App() {
             </div>
 
             {/* Right Image & Overlay */}
-            <div className="flex-1 relative flex items-end justify-center max-h-[min(70vh,55vw)]">
+            <div className="flex-1 relative flex items-end justify-center max-h-[min(52vh,42vw)]">
               <img
                 src={ASSETS.bottomRight}
                 alt="Cachorrinho feliz e bem cuidado"
@@ -508,8 +508,8 @@ export default function App() {
               />
               {/* Right Overlay: 4.6 rating with orange filled star */}
               <div
-                className="absolute right-6 xl:right-12 pointer-events-auto flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/80 shadow-lg animate-scale-in delay-1200 transition-transform hover:scale-105 cursor-pointer"
-                style={{ bottom: 'clamp(20px, 4vh, 50px)' }}
+                className="absolute right-6 xl:right-12 pointer-events-auto flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/80 shadow-lg animate-scale-in delay-1200 transition-transform hover:scale-105 cursor-pointer z-30"
+                style={{ bottom: 'clamp(16px, 3.5vh, 40px)' }}
                 onClick={() => showToast('Avaliação média de 4.6 estrelas pelos clientes da P3TS!')}
               >
                 <div className="w-8 h-8 rounded-full bg-[#E86A10]/15 flex items-center justify-center">
@@ -535,8 +535,8 @@ export default function App() {
         {/* TABLET HERO LAYOUT (md to lg)                            */}
         {/* ======================================================== */}
         <section className="hidden md:flex lg:hidden flex-1 relative flex-col overflow-hidden">
-          {/* Heading */}
-          <div className="relative z-5 w-full flex flex-col items-center justify-start pt-8 px-6 pointer-events-none">
+          {/* Heading (z-20) */}
+          <div className="relative z-20 w-full flex flex-col items-center justify-start pt-6 px-6 pointer-events-none">
             <h1 className="font-serif-display font-normal text-[#1a3d1a] text-5xl md:text-6xl leading-[1.12] tracking-normal text-center">
               <span className="block mb-1.5">
                 <span className="inline-block animate-word-pop delay-200 mr-3">Tudo</span>
@@ -550,9 +550,9 @@ export default function App() {
             </h1>
           </div>
 
-          {/* Bottom 3 Images (maxHeight 60vh / 75vh / 60vh) */}
+          {/* Bottom 3 Images (maxHeight controlled) */}
           <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-center pointer-events-none">
-            <div className="flex-1 relative flex items-end justify-center max-h-[60vh]">
+            <div className="flex-1 relative flex items-end justify-center max-h-[48vh]">
               <img
                 src={ASSETS.bottomLeft}
                 alt="Pet"
@@ -560,8 +560,8 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
               <div
-                className="absolute left-3 pointer-events-auto flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/80 shadow-md animate-scale-in delay-1000"
-                style={{ bottom: '24px' }}
+                className="absolute left-3 pointer-events-auto flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/80 shadow-md animate-scale-in delay-1000 z-30"
+                style={{ bottom: '20px' }}
               >
                 <div className="flex items-center -space-x-1.5">
                   <img
@@ -581,7 +581,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="flex-[1.265] relative flex items-end justify-center max-h-[75vh]">
+            <div className="flex-[1.265] relative flex items-end justify-center max-h-[58vh]">
               <img
                 src={ASSETS.bottomCenter}
                 alt="Pet Principal"
@@ -589,8 +589,8 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
               <div
-                className="absolute inset-x-0 mx-auto w-fit flex flex-col items-center pointer-events-auto text-center px-2 animate-fade-up delay-1100"
-                style={{ bottom: '24px' }}
+                className="absolute inset-x-0 mx-auto w-fit flex flex-col items-center pointer-events-auto text-center px-2 animate-fade-up delay-1100 z-30"
+                style={{ bottom: '20px' }}
               >
                 <h2 className="text-white font-serif-display font-normal text-xl leading-tight drop-shadow-md mb-2">
                   Os Melhores Produtos para o Seu Pet
@@ -605,7 +605,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="flex-1 relative flex items-end justify-center max-h-[60vh]">
+            <div className="flex-1 relative flex items-end justify-center max-h-[48vh]">
               <img
                 src={ASSETS.bottomRight}
                 alt="Pet"
@@ -613,8 +613,8 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
               <div
-                className="absolute right-3 pointer-events-auto flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/80 shadow-md animate-scale-in delay-1200"
-                style={{ bottom: '24px' }}
+                className="absolute right-3 pointer-events-auto flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/80 shadow-md animate-scale-in delay-1200 z-30"
+                style={{ bottom: '20px' }}
               >
                 <Star className="w-4 h-4 fill-[#E86A10] text-[#E86A10]" />
                 <div className="flex flex-col">
@@ -629,26 +629,26 @@ export default function App() {
         {/* ======================================================== */}
         {/* MOBILE HERO LAYOUT (below md)                            */}
         {/* ======================================================== */}
-        <section className="flex md:hidden flex-1 flex-col justify-between overflow-hidden px-4 pt-2 pb-1">
-          {/* Top Section: Title, subtitle, "Explorar Produtos" */}
-          <div className="flex flex-col items-center text-center shrink-0 animate-fade-up delay-200 pt-2">
-            <h1 className="font-serif-display font-normal text-[#1a3d1a] text-[34px] sm:text-[38px] leading-[1.12] tracking-normal">
+        <section className="flex md:hidden flex-1 flex-col justify-between overflow-hidden px-4 pt-2 pb-1 relative">
+          {/* Top Section: Title, subtitle, "Explorar Produtos" (z-20) */}
+          <div className="flex flex-col items-center text-center shrink-0 animate-fade-up delay-200 pt-1 relative z-20">
+            <h1 className="font-serif-display font-normal text-[#1a3d1a] text-[32px] sm:text-[36px] leading-[1.12] tracking-normal">
               Tudo o que Seus <span className="text-[#E86A10]">P3TS</span> Amam
             </h1>
-            <p className="text-xs text-gray-600 mt-1.5 max-w-xs font-medium leading-snug">
+            <p className="text-xs text-gray-600 mt-1 max-w-xs font-medium leading-snug">
               Conforto acolhedor, brinquedos e nutrição premium pensados para cada momento.
             </p>
             <a
               href="#loja"
-              className="mt-3 flex items-center gap-2 bg-[#E86A10] hover:bg-[#d45e0d] text-white px-5 py-2 rounded-full font-semibold text-xs shadow-md transition-transform active:scale-95"
+              className="mt-2.5 flex items-center gap-2 bg-[#E86A10] hover:bg-[#d45e0d] text-white px-5 py-2 rounded-full font-semibold text-xs shadow-md transition-transform active:scale-95"
             >
               <span>Explorar Produtos</span>
               <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
             </a>
           </div>
 
-          {/* Stats Row: 98K+ with avatars left, divider, 4.6 star right */}
-          <div className="flex items-center justify-center gap-4 bg-white/80 backdrop-blur-xs py-2 px-5 rounded-xl border border-white/60 mx-auto w-full max-w-xs shadow-xs z-20 shrink-0 my-2 animate-fade-in delay-600">
+          {/* Stats Row: 98K+ with avatars left, divider, 4.6 star right (z-20) */}
+          <div className="flex items-center justify-center gap-4 bg-white/85 backdrop-blur-xs py-1.5 px-4 rounded-xl border border-white/60 mx-auto w-full max-w-xs shadow-xs z-20 shrink-0 my-1 animate-fade-in delay-600">
             <div className="flex items-center gap-2">
               <div className="flex items-center -space-x-1.5">
                 <img
@@ -672,9 +672,9 @@ export default function App() {
             </div>
           </div>
 
-          {/* Bottom 3 Images */}
-          <div className="flex items-end justify-center w-full mt-auto relative z-10 pointer-events-none">
-            <div className="flex-1 flex items-end justify-center">
+          {/* Bottom 3 Images (z-10, controlled height) */}
+          <div className="flex items-end justify-center w-full mt-auto relative z-10 pointer-events-none max-h-[38vh]">
+            <div className="flex-1 flex items-end justify-center max-h-[34vh]">
               <img
                 src={ASSETS.bottomLeft}
                 alt="Pet"
@@ -682,7 +682,7 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="flex-[1.265] flex items-end justify-center">
+            <div className="flex-[1.265] flex items-end justify-center max-h-[38vh]">
               <img
                 src={ASSETS.bottomCenter}
                 alt="Pet Principal"
@@ -690,7 +690,7 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="flex-1 flex items-end justify-center">
+            <div className="flex-1 flex items-end justify-center max-h-[34vh]">
               <img
                 src={ASSETS.bottomRight}
                 alt="Pet"
