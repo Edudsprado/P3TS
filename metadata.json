@@ -1,0 +1,6 @@
+{
+  "name": "CozyPaws - Pet Store",
+  "description": "Tudo o que seus pets amam. Aconchego, diversão e os melhores produtos selecionados para o seu pet.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
